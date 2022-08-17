@@ -1,0 +1,63 @@
+// Input Tiles
+.correct {
+  background-color: #11365f;
+  transition: transform 2s;
+  transform: rotateX(360deg);
+}
+.close {
+  background-color: #7ad1e2;
+  transition: transform 2s;
+  transform: rotateX(360deg);
+}
+.wrong {
+  background-color: darkgrey;
+  transition: transform 2s;
+  transform: rotateX(360deg);
+}
+.filled {
+  color: white;
+  border: none;
+}
+
+.letter-input {
+  padding: 5px;
+  margin: 5px;
+  width: 52px;
+  height: 52px;
+  font-weight: 600;
+  text-align: center;
+  caret-color: transparent;
+  border: .5px solid gainsboro;
+}
+
+#popup {
+  margin: auto;
+  text-align: center;
+  box-shadow: 2px;
+  border: 1px solid black;
+  width: 220px;
+  position: fixed;
+  left: 50%;
+  top: 25%;
+  margin-left: -110px;
+  background-color: white;
+  padding: 15px 0px 15px 0px;
+  visibility: hidden;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+
+  button {
+    background-color: #11365f;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 8px;
+    font-size: 12px
+  }
+}
+
+.guesses-str {
+  white-space: pre-wrap;
+  border: darkgrey;
+}

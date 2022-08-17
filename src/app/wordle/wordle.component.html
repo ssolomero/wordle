@@ -1,0 +1,32 @@
+<div class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+  <h1 id=title>ocWordle</h1>
+</div>
+
+<div class="wordle-container container align-items-center">
+  <div *ngFor="let attempt of [].constructor(numOfGuesses); index as attemptNum; first as isFirstAttempt" 
+    class="row d-flex justify-content-center">
+    <input appWordleInput *ngFor="let letterInput of wordleArr; index as letterNum; first as isFirstLetter" 
+          id="lettter{{attemptNum}}{{letterNum}}" 
+          ngClass="attempt-row-{{attemptNum}}"
+          class="letter-input"
+          type="text" 
+          [disabled]="!isFirstLetter || !isFirstAttempt"
+          maxlength="1"
+          (keydown)="onKeyPress($event, letterNum)"
+          [attemptNum] = "attemptNum"
+          [letterNum]="letterNum"
+          oninput = "this.value = this.value.toUpperCase()"
+          autofocus
+          >
+  </div>
+</div>
+
+<div #snackbar id="snackbar">{{toast}}</div>
+
+<div #popup id="popup" class="row d-flex justify-content-center">
+  <div class="container">
+    <div class='mb-4'>{{wordle}}</div>
+    <div class="guesses-str">{{guessesStr}}</div>
+    <button class="mt-4"(click)="shareScore()">Share your score</button>
+  </div>
+</div>
